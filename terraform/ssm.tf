@@ -16,7 +16,3 @@ resource "aws_ssm_parameter" "cwagent" {
 }
 EOF
 }
-
-output "ssm" {
-    value = aws_ssm_parameter.cwagent.name
-}

@@ -1,9 +1,3 @@
-
-locals {
-  ecs_service_name           = "sample-dotnet-app"
-  ecs_service_log_group_name = "/aws/${var.project_name}/${var.environment_name}/ecs-services/${local.ecs_service_name}"
-}
-
 module "ecs_service" {
   source  = "terraform-aws-modules/ecs/aws//modules/service"
   version = "5.12.0"
@@ -146,7 +140,7 @@ module "ecs_service" {
         options = {
           awslogs-create-group  = true
           awslogs-group         = "/ecs/ecs-cwagent"
-          awslogs-region        = var.region_name
+          awslogs-region        = "ca-central-1"
           awslogs-stream-prefix = "ecs"
         }
       },

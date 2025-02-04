@@ -8,13 +8,11 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region_name
+  region = "ca-central-1"
   default_tags {
     tags = {
-      "Project"     = var.project_name
-      "Environment" = var.environment_name
-      "Region"      = var.region_name
-      "Owner"       = var.resource_owner
+      "Project"     = local.project_name
+      "Environment" = local.environment_name
     }
   }
 }

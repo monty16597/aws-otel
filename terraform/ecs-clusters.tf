@@ -8,7 +8,7 @@ module "ecs_cluster" {
     execute_command_configuration = {
       logging = "OVERRIDE"
       log_configuration = {
-        cloud_watch_log_group_name = "/aws/${var.project_name}/${var.environment_name}/ecs/cluster/"
+        cloud_watch_log_group_name = "/aws/${local.project_name}/${local.environment_name}/ecs/cluster/"
       }
     }
   }
