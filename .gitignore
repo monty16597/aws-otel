@@ -461,3 +461,12 @@ NuGetPackage/
 OpenTelemetryDistribution/*
 
 lychee/out.md
+
+
+# Terraform gitignore
+*.tfstate
+*.tfstate.backup
+*.tfstate.backup.*
+*.tfstate.backup_*
+*.tfstate_*
+*.terraform*

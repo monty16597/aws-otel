@@ -35,14 +35,14 @@ services:
       - INSTANCE_ID
       - LISTEN_ADDRESS=0.0.0.0:8080
       - OTEL_RESOURCE_ATTRIBUTES=service.name=aws-otel-integ-test
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel:4317 # TODO: workaround for trace exporter endpoint
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel:4317
       - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://otel:4317/v1/traces
       - OTEL_AWS_APPLICATION_SIGNALS_EXPORTER_ENDPOINT=http://otel:4317/v1/metrics
       - ASPNETCORE_URLS=http://+:8080
       - OTEL_AWS_APPLICATION_SIGNALS_ENABLED=true
       - OTEL_TRACES_SAMPLER=xray
       - OTEL_TRACES_SAMPLER_ARG=endpoint=http://otel:2000,polling_interval=1
+      - OTEL_DOTNET_AUTO_PLUGINS="AWS.Distro.OpenTelemetry.AutoInstrumentation.Plugin, AWS.Distro.OpenTelemetry.AutoInstrumentation"
+      - OTEL_EXPORTER_OTLP_PROTOCOL="protobuf"
     ports:
       - "8080:8080"
-    volumes:
-      - ~/.aws:/root/.aws # required for authentication

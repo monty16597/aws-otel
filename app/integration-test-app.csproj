@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.7.304" />
-    <PackageReference Include="AWS.Distro.OpenTelemetry.AutoInstrumentation" Version="1.6.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
